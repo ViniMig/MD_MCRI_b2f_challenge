@@ -141,3 +141,9 @@ plt.legend(bbox_to_anchor=(1.01, 1),borderaxespad=0, title = "predicted_group")
 plt.title("t-SNE")
 #endregion Visuals
 
+#export csv file with original data and predicted groups only
+keepColumns = data_feats
+keepColumns.append('predicted_group')
+keepColumns.insert(0,'ID')
+data.to_csv('data_predictions.csv', columns=keepColumns, index=False)
+
